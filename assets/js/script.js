@@ -1,6 +1,14 @@
 const DateTime = luxon.DateTime;
 const Interval = luxon.Interval;
 
+const loadEvents = () => {
+  for (let i = 8; i <= 18; i++) {
+    const textAreaId = i;
+    const textAreaText = localStorage.getItem(textAreaId);
+    $(`textarea#${textAreaId}`).val(textAreaText);
+  }
+}
+
 $('#currentDay').text(DateTime.local().toFormat('DDDD'));
 $('#currentTime').text(DateTime.local().toFormat('tt'));
 
@@ -19,6 +27,17 @@ while (timeBlockHr <= 18) {
   .append(timeBlockRow)
   .appendTo('#time-blocks');
   
+  $('textarea.description').on('click', () => {
+    $('<form>').attr('id', 'textarea-form')
+  });
+  
+  $(`button#${timeBlockHr}.saveBtn`).on('click', function() {
+    console.log( $( this ).text() )
+    const eventHour = $(this).attr('id');
+    const eventDescr = $(`textarea#${eventHour}`).val();
+    localStorage.setItem(eventHour, eventDescr);
+  });
+  
   timeBlockHr++;
 
   if (DateTime.local().hasSame(timeBlock, 'hour')) {
@@ -29,9 +48,5 @@ while (timeBlockHr <= 18) {
     $('.description').addClass('past');
   }
 }
-  
-$(`#${timeBlockHr}`).on('click', function() {
-  const textAreaId = $(this).attr('id');
-  const textAreaText = $(`#${textAreaId}`).val();
-  localStorage.setItem(textAreaId, textAreaText);
-});
+
+loadEvents();
