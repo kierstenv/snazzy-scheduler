@@ -1,0 +1,24 @@
+{
+  "name": "snazzy-scheduler",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kierstenv/snazzy-scheduler.git"
+  },
+  "author": "kierstenv",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kierstenv/snazzy-scheduler/issues"
+  },
+  "homepage": "https://github.com/kierstenv/snazzy-scheduler#readme",
+  "dependencies": {
+    "jquery": "^3.6.0",
+    "luxon": "^2.3.1",
+    "node": "^17.7.2"
+  }
+}

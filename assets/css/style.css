@@ -21,11 +21,12 @@ textarea{
   border-bottom: 10px solid black;
 }
 
-.description{
+.description {
+  width: 80%;
   white-space: pre-wrap;
 }
 
-.time-block{
+.time-block {
   text-align: center;
   border-radius: 15px;
 }
@@ -37,6 +38,7 @@ textarea{
 }
 
 .hour {
+  width: 10%;
   background-color: #ffffff;
   color: #000000;
   border-top: 1px dashed #000000;
