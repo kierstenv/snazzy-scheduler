@@ -38,15 +38,15 @@ while (timeBlockHr <= 18) {
     localStorage.setItem(eventHour, eventDescr);
   });
   
-  timeBlockHr++;
-
-  if (DateTime.local().hasSame(timeBlock, 'hour')) {
-    $('.description').addClass('present');
-  } else if (DateTime.local() < timeBlock.startOf('hour')) {
-    $('.description').addClass('future');
+  if (timeBlock.hour > DateTime.local().hour) {
+    $(`textarea#${timeBlockHr}`).addClass('future');
+  } else if (timeBlock.hour < DateTime.local().hour) {
+    $(`textarea#${timeBlockHr}`).addClass('past');
   } else {
-    $('.description').addClass('past');
+    $(`textarea#${timeBlockHr}`).addClass('present');
   }
+
+  timeBlockHr++;
 }
 
 loadEvents();
