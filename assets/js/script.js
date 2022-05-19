@@ -7,10 +7,10 @@ const loadEvents = () => {
     const textAreaText = localStorage.getItem(textAreaId);
     $(`textarea#${textAreaId}`).val(textAreaText);
   }
-}
+};
 
 $('#currentDay').text(DateTime.local().toFormat('DDDD'));
-$('#currentTime').text(DateTime.local().toFormat('tt'));
+$('#currentTime').text(DateTime.local().toFormat('t'));
 
 timeBlockHr = 8;
 
@@ -45,8 +45,14 @@ while (timeBlockHr <= 18) {
   } else {
     $(`textarea#${timeBlockHr}`).addClass('present');
   }
-
+  
   timeBlockHr++;
 }
 
 loadEvents();
+
+window.setInterval("refresh()", 60000);
+
+refresh = () => {
+  window.location.reload();
+};
