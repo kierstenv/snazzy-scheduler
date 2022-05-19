@@ -4,6 +4,8 @@
   ## Description [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=plastic)](https://opensource.org/licenses/MIT)
   
   A simple calendar app for scheduling your work day. Click on a time slot to add a task, and save it to your schedule using the save button!
+
+  [![preview](./assets/img/preview.png)](./assets/img/preview.png)
   
   ## Installation
   
